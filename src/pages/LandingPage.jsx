@@ -34,11 +34,11 @@ export default function LandingPage() {
       <section className="lp-hero">
         <div className="lp-hero-inner">
           <div className="lp-hero-text">
-            <span className="lp-hero-tag">Banca Digital · Banco Andino</span>
-            <h1>Tu banco digital, <br />inspirado en los Andes</h1>
+            <span className="lp-hero-tag">Banca Digital · Banco de la Nación</span>
+            <h1>Tu banco nacional, <br />seguro y disponible siempre</h1>
             <p>
-              Abre tu cuenta, paga tus créditos y transfiere tu dinero en minutos.
-              Todo desde tu Banca por Internet, con la seguridad que mereces.
+              Gestiona tus cuentas, paga tus préstamos y transfiere tu dinero de forma rápida
+              y confiable. Banco de la Nación está contigo en cada operación.
             </p>
             <div className="lp-hero-actions">
               <button className="lp-btn lp-btn-light" onClick={() => navigate('/login')}>
@@ -89,21 +89,21 @@ export default function LandingPage() {
       <section className="lp-promo">
         <div className="lp-promo-inner">
           <div>
-            <span className="lp-promo-tag"><TrendingUp size={15} /> Producto Digital</span>
+            <span className="lp-promo-tag"><TrendingUp size={16} /> Producto Digital</span>
             <h2>Solicita tu crédito 100% en línea</h2>
             <p>Sin papeleos ni colas. Pide tu crédito de consumo o microempresa desde tu Banca por Internet y recibe una respuesta en evaluación al instante.</p>
+            <button className="lp-btn lp-btn-light" onClick={() => navigate('/login')} style={{ marginTop: 8 }}>
+              Solicitar ahora <ArrowRight size={18} />
+            </button>
           </div>
-          <button className="lp-btn lp-btn-light" onClick={() => navigate('/login')}>
-            Solicitar ahora <ArrowRight size={18} />
-          </button>
         </div>
       </section>
 
       {/* ===== BENEFICIOS ===== */}
       <section className="lp-section" id="beneficios">
         <div className="lp-section-head">
-          <h2>¿Por qué Banco Andino?</h2>
-          <p>Una banca cercana, segura y hecha para el Perú.</p>
+          <h2>¿Por qué Banco de la Nación?</h2>
+          <p>Una banca estatal sólida, digital y enfocada en el bienestar del país.</p>
         </div>
         <div className="lp-benefits">
           {BENEFICIOS.map((b) => {

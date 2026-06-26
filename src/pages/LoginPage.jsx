@@ -4,7 +4,6 @@ import { CreditCard, Fingerprint, Lock, LogIn, ArrowLeft } from 'lucide-react'
 import { useHBAuth } from '../hooks/useHBAuth.js'
 import { extractError } from '../utils/format.js'
 import Alert from '../components/ui/Alert.jsx'
-import Logo from '../components/ui/Logo.jsx'
 
 export default function LoginPage() {
   const { login, isAuthenticated } = useHBAuth()
@@ -48,10 +47,10 @@ export default function LoginPage() {
     <div className="hb-login-bg">
       <div className="hb-login-card">
         <div className="hb-login-franja" />
-        <div className="hb-login-head" style={{ display: 'flex', justifyContent: 'center', marginBottom: 18 }}>
-          <Logo size={48} variant="dark" subtitle="BANCA POR INTERNET" />
+        <div className="hb-login-head">
+          <img src="/image/logoBN.png" alt="Banco de la Nación" className="hb-login-logo" />
         </div>
-        <p style={{ textAlign: 'center', color: 'var(--hb-muted)', fontSize: 13, margin: '0 0 22px' }}>
+        <p className="hb-login-description">
           Ingresa con el número de tu tarjeta de ahorros
         </p>
 
@@ -120,7 +119,6 @@ export default function LoginPage() {
         </form>
 
         <p className="hb-login-hint">
-          Prueba: tarjeta <strong>cli000001</strong> · DNI <strong>12345678</strong> · clave <strong>demo1234</strong>
         </p>
 
         <div style={{ textAlign: 'center', marginTop: 16 }}>

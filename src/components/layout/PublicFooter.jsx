@@ -4,15 +4,15 @@ import Logo from '../ui/Logo.jsx'
 const COLS = [
   {
     title: 'Productos',
-    links: ['Cuenta de Ahorros', 'Cuenta Sueldo', 'Crédito de Consumo', 'Crédito Microempresa', 'Tarjeta de Débito'],
+    links: ['Cuenta de Ahorros', 'Cuenta Sueldo', 'Crédito de Consumo', 'Crédito Hipotecario', 'Tarjeta de Débito'],
   },
   {
-    title: 'Banco Andino',
-    links: ['Nosotros', 'Trabaja con nosotros', 'Memoria anual', 'Sostenibilidad', 'Sala de prensa'],
+    title: 'Banco de la Nación',
+    links: ['Nosotros', 'Transparencia', 'Gobierno Corporativo', 'Noticias', 'Sala de prensa'],
   },
   {
     title: 'Ayuda',
-    links: ['Centro de ayuda', 'Ubícanos', 'Reclamos', 'Transparencia', 'Tasas y tarifas'],
+    links: ['Centro de ayuda', 'Ubícanos', 'Reclamos', 'Tasas y tarifas', 'Seguridad'],
   },
 ]
 
@@ -21,8 +21,8 @@ export default function PublicFooter() {
     <footer className="lp-footer" id="footer">
       <div className="lp-footer-inner">
         <div className="lp-footer-brand">
-          <Logo size={40} variant="light" subtitle="BANCA DIGITAL" />
-          <p>Tu banco digital inspirado en los Andes. Operaciones 100% en línea, seguras y a tu alcance.</p>
+          <Logo size={40} variant="light" subtitle="BANCA POR INTERNET" />
+          <p>Banco de la Nación es el banco oficial del país. Operaciones seguras y servicio digital desde cualquier lugar.</p>
           <div className="lp-social">
             <a href="#footer" aria-label="Facebook"><Facebook size={18} /></a>
             <a href="#footer" aria-label="Instagram"><Instagram size={18} /></a>
@@ -44,16 +44,15 @@ export default function PublicFooter() {
         <div className="lp-footer-col">
           <h4>Contacto</h4>
           <ul className="lp-contact">
-            <li><Phone size={15} /> Banca telefónica: (01) 311-9000</li>
-            <li><Mail size={15} /> contacto@bancoandino.pe</li>
-            <li><MapPin size={15} /> Av. Los Andes 123, Lima</li>
+            <li><Phone size={15} /> Línea gratuita: (01) 311-9000</li>
+            <li><Mail size={15} /> atencion@bn.com.pe</li>
+            <li><MapPin size={15} /> Av. 9 de Diciembre 123, Lima</li>
           </ul>
         </div>
       </div>
 
-      <div className="hb-franja-top" />
       <div className="lp-footer-legal">
-        © {2026} Banco Andino — Banca por Internet. Demo educativo. Supervisado por la SBS.
+        © {2026} Banco de la Nación — Banca por Internet. Demo educativo.
       </div>
     </footer>
   )

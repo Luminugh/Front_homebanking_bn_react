@@ -1,11 +1,10 @@
-# Banco Andino — Banca por Internet (Homebanking)
+# Banco de la Nación — Banca por Internet (Homebanking)
 
-Portal del **cliente final** de Banco Andino, construido en **React 18 + Vite (JavaScript)**.
+Portal del **cliente final** de Banco de la Nación, construido en **React 18 + Vite (JavaScript)**.
 Consume el backend FastAPI del Homebanking que corre en `http://localhost:8002`.
 
-> Identidad visual de **Banco Andino**: isotipo de flor andina multicolor, paleta del textil
-> andino (rojo `#e2132b`, magenta, turquesa, naranja, morado…), **franja tejida** superior,
-> header con gradiente de marca, menú horizontal de íconos circulares y tarjetas redondeadas.
+> Identidad visual de **Banco de la Nación**: paleta corporativa roja y blanca, isotipo de escudo,
+> layout institucional, tipografía moderna, botones sólidos y una experiencia enfocada en confianza y servicio.
 
 ---
 
@@ -89,7 +88,7 @@ src/
 0. **Home marketero** (`/`, público) — hero con gradiente de marca, accesos rápidos, grilla de
    productos (Ahorros, Cuenta Sueldo, Créditos, Tarjetas…), beneficios, promo y footer. CTA
    "Banca por Internet" e ingreso con número de tarjeta de ahorros.
-1. **Login** — tarjeta centrada con logo Banco Andino sobre el gradiente de marca y franja tejida.
+1. **Login** — tarjeta centrada con logo Banco de la Nación sobre un fondo rojo institucional.
 2. **Inicio** (`/inicio`) — bienvenida personalizada + accesos rápidos.
 3. **Consultas › Cuentas de Ahorro** — tabla separada por Soles/Dólares, con Movimientos y Detalle.
 4. **Movimientos** — cabecera de la cuenta (producto, n°, saldo, TEA) + tabla de movimientos.

@@ -4,7 +4,7 @@
  */
 export default function PageLayout({ title, subtitle, actions, aside, children }) {
   return (
-    <div className="bbva-page">
+    <div className={`bbva-page ${aside ? '' : 'full'}`}>
       <div className="bbva-page-main">
         {(title || actions) && (
           <div className="bbva-page-head">

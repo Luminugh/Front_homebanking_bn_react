@@ -5,7 +5,6 @@ import { useHBAuth } from '../../hooks/useHBAuth.js'
 import { useUI } from '../../context/UIContext.jsx'
 import Logo from '../ui/Logo.jsx'
 
-// Pestañas principales (patrón BBVA): Inicio · Cuentas · Préstamos · Operaciones.
 const TABS = [
   { label: 'Inicio', to: '/inicio', match: ['/inicio'] },
   { label: 'Cuentas', to: '/cuentas/ahorro', match: ['/cuentas/ahorro'] },
@@ -33,67 +32,62 @@ export default function Header() {
   const isActive = (tab) => tab.match.some((m) => location.pathname.startsWith(m))
 
   return (
-    <header>
-      <div className="hb-franja-top" />
-
-      {/* Barra superior oscura */}
-      <div className="bbva-topbar">
-        <div className="bbva-topbar-inner">
-          <button className="bbva-brand" onClick={() => navigate('/inicio')} aria-label="Inicio">
-            <Logo size={36} variant="light" subtitle="BANCA POR INTERNET" />
-          </button>
-
-          <div className="bbva-topbar-right">
-            <button className="bbva-hide-toggle" onClick={toggleHideAmounts} title="Ocultar importes">
-              {hideAmounts ? <EyeOff size={16} /> : <Eye size={16} />}
-              <span>Ocultar importes</span>
-              <span className={`bbva-switch ${hideAmounts ? 'on' : ''}`}>
-                <span className="bbva-switch-dot" />
-              </span>
+    <header className="bn-header">
+      <div className="bn-top-strip">
+        <div className="bn-container">
+          <div className="bn-top-left">
+            <button className="bn-brand-button" onClick={() => navigate('/inicio')} aria-label="Inicio" title="Banco de la Nación">
+              <img src="/image/logoBN.png" alt="Banco de la Nación" className="bn-brand-icon" />
             </button>
+          </div>
 
-            <div className="bbva-user-wrap">
-              <button className="bbva-user" onClick={() => setMenuUser((v) => !v)}>
-                <span className="bbva-avatar">{iniciales}</span>
-                <span className="bbva-user-text">
-                  <strong>{user?.nombre || 'Cliente'}</strong>
-                  <small>{user?.codcliente}</small>
-                </span>
-                <ChevronDown size={16} />
+          <div className="bn-top-center">
+            <nav className="bn-tabs" aria-label="Main navigation">
+              <ul className="bn-nav-list">
+                {TABS.map((t) => (
+                  <li key={t.to}>
+                    <button
+                      className={`bn-tab ${isActive(t) ? 'active' : ''}`}
+                      onClick={() => navigate(t.to)}
+                      aria-current={isActive(t) ? 'page' : undefined}
+                    >
+                      {t.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+
+          <div className="bn-top-right">
+            <div className="bn-utilities">
+              <button className="bn-hide-toggle" onClick={toggleHideAmounts} title="Ocultar importes" aria-pressed={hideAmounts}>
+                {hideAmounts ? <EyeOff size={16} /> : <Eye size={16} />}
               </button>
-              {menuUser && (
-                <div className="bbva-user-menu">
-                  <button onClick={() => navigate('/inicio')}>
-                    <UserCog size={16} /> Actualiza tus datos
-                  </button>
-                  <button onClick={handleLogout}>
-                    <LogOut size={16} /> Salir
-                  </button>
-                </div>
-              )}
-            </div>
 
-            <button className="bbva-salir" onClick={handleLogout}>
-              <LogOut size={16} /> Salir
-            </button>
+              <div className="bn-user-wrap">
+                <button className="bn-user" onClick={() => setMenuUser((v) => !v)} aria-haspopup="true" aria-expanded={menuUser}>
+                  <span className="bn-avatar">{iniciales}</span>
+                  <span className="bn-user-name">{user?.nombre ? user.nombre.split(' ')[0] : 'Cliente'}</span>
+                </button>
+                {menuUser && (
+                  <div className="bn-user-menu">
+                    <button onClick={() => navigate('/inicio')}>
+                      <UserCog size={16} /> Actualiza tus datos
+                    </button>
+                    <button onClick={handleLogout}>
+                      <LogOut size={16} /> Cerrar sesión
+                    </button>
+                  </div>
+                )}
+              </div>
+              <button className="bn-logout" onClick={handleLogout} title="Cerrar sesión">
+                <LogOut size={16} />
+              </button>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Barra de pestañas roja */}
-      <nav className="bbva-tabs">
-        <div className="bbva-tabs-inner">
-          {TABS.map((t) => (
-            <button
-              key={t.to}
-              className={`bbva-tab ${isActive(t) ? 'active' : ''}`}
-              onClick={() => navigate(t.to)}
-            >
-              {t.label}
-            </button>
-          ))}
-        </div>
-      </nav>
     </header>
   )
 }

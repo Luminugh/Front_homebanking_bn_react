@@ -1,9 +1,9 @@
 {
-  "name": "banco-andino-homebanking",
+  "name": "banco-nacion-homebanking",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Banco Andino — Banca por Internet (Homebanking del cliente)",
+  "description": "Banco de la Nación — Banca por Internet (Homebanking del cliente)",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

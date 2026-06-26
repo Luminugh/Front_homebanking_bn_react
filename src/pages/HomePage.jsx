@@ -35,7 +35,7 @@ export default function HomePage() {
       {/* Saludo */}
       <div className="bbva-hello">
         <h1>Hola {primerNombre(user?.nombre)}, hoy te ofrecemos:</h1>
-        <p>Esta es la posición global de tus productos en Banco Andino.</p>
+        <p>Esta es la posición global de tus productos en Banco de la Nación.</p>
       </div>
 
       {/* KPIs */}
